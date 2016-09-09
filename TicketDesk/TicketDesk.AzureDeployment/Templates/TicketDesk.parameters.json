@@ -1,0 +1,17 @@
+﻿{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlAdministratorLogin": {
+            "value": "SuperAdmin"
+        },
+        "sqlAdministratorLoginPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/e9311502-a3d1-4b22-b06f-5ba84ffbe565/resourceGroups/DevOpsDemoDeploymentArtifacts/providers/Microsoft.KeyVault/vaults/DevOpsDemoDeployment"
+                },
+                "secretName": "SqlAdministratorPassword"
+            }
+        }
+    }
+}
